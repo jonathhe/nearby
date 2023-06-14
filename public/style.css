@@ -45,6 +45,7 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 .fylo-options {
   width: 326px;
   height: 201px;
@@ -66,13 +67,18 @@ body {
 }
 
 .option-icons {
+  width: 100%;
   margin: 10px 0;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .option-icons div {
-  width: 48px;
-  height: 48px;
+  width: 95%;
+  height: 100px;
   margin-top: 10px;
+  margin-bottom: 10px;  
   display: flex;
   justify-content: center;
   align-items: center;  
@@ -80,9 +86,7 @@ body {
   background-color: var(--very-dark-blue);
   cursor: pointer;
 }
-.option-icons div:nth-child(2n) {
-  margin: 10px;  
-}
+
 .option-icons i {
   color: var(--color-icon);
   font-size: 16px;
@@ -107,11 +111,12 @@ body {
 }
 
 .info {
-  position: relative;
   width: 326px;
-  height: 160px;
+  position: relative;
+  /* width: 326px;
+  height: 160px; */
   margin-top: 10px;
-  padding: 35px;
+  padding: 20px;
   background-color: var(--dark-blue);
   border-radius: var(--radius);
   display: flex;
@@ -201,7 +206,7 @@ body {
   .info {
     width: 540px;
     align-items: flex-start;
-    bottom: -15px;
+    /* bottom: -15px; */
   }
   .bar-progress {
     width: 340px;
