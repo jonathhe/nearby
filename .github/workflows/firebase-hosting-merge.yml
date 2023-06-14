@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          entrypoint: firebase.json
+          entrypoint: "."
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_NEARBY_33979 }}'
           channelId: live
