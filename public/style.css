@@ -74,27 +74,41 @@ body {
   justify-content: center;
   align-items: center;
 }
-.option-icons div {
+.option-icons li {
+  list-style-type: none; /* Remove bullets */
   width: 95%;
   height: 100px;
   margin-top: 10px;
   margin-bottom: 10px;  
   display: flex;
-  justify-content: center;
+  justify-content: space;
   align-items: center;  
   border-radius: var(--radius);
   background-color: var(--very-dark-blue);
   cursor: pointer;
+  font-weight: 700;
 }
 
-.option-icons i {
-  color: var(--color-icon);
-  font-size: 16px;
-}
-.option-icons div:hover > i  {
+
+
+
+.option-icons li:hover  {
   color: var(--white);
   transition: color 100ms linear;
   
+}
+.option-icons img  {
+  height: 100%;
+  width: 40%;
+  border-radius: var(--radius) 50px var(--radius) var(--radius);
+  object-fit: cover;
+  object-position: 100% 0
+  
+}
+.option-icons h1  {
+  width: 100%;
+  text-align: center;
+  padding: 8px;
 }
 
 .title_wrapper {
