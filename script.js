@@ -40,19 +40,21 @@ async function nearbySearch() {
     // Restrict within the map viewport.
     let center = new google.maps.LatLng(loc.lat, loc.lng);
     const request = {
+        textQuery: 'food',
         // required parameters
         fields: ['displayName', 'googleMapsURI', 'photos'],
-        locationRestriction: {
+        
+        locationBias: {
             center: center,
             radius: 5000,
         },
         // optional parameters
-        includedPrimaryTypes: ['restaurant'],
-        maxResultCount: 5,
-        rankPreference: SearchNearbyRankPreference.POPULARITY
+        maxResultCount: 3,
+        minRating: 4,
+        rankPreference: SearchNearbyRankPreference.RELEVANCE
     };
     //@ts-ignore
-    const { places } = await Place.searchNearby(request);
+    const { places } = await Place.searchByText(request);
     if (places.length) {
         console.log(places);
         let placesWrapper = document.getElementById("places");
