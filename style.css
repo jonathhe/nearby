@@ -39,7 +39,8 @@ body {
 }
 
 .main {
-  height: 90vh;
+  padding: 20px;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -57,6 +58,7 @@ body {
   justify-content: space-evenly;
 }
 .fylo-options > div {
+  min-height: 151px;
   margin-bottom: 15px;
 }
 
