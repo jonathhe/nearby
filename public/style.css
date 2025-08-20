@@ -45,6 +45,7 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 .fylo-options {
   width: 326px;
   height: 201px;
@@ -66,31 +67,48 @@ body {
 }
 
 .option-icons {
+  width: 100%;
   margin: 10px 0;
   display: flex;
-}
-.option-icons div {
-  width: 48px;
-  height: 48px;
-  margin-top: 10px;
-  display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+}
+.option-icons li {
+  list-style-type: none; /* Remove bullets */
+  width: 95%;
+  height: 100px;
+  margin-top: 10px;
+  margin-bottom: 10px;  
+  display: flex;
+  justify-content: space;
   align-items: center;  
   border-radius: var(--radius);
   background-color: var(--very-dark-blue);
   cursor: pointer;
+  font-weight: 700;
 }
-.option-icons div:nth-child(2n) {
-  margin: 10px;  
-}
-.option-icons i {
-  color: var(--color-icon);
-  font-size: 16px;
-}
-.option-icons div:hover > i  {
+
+
+
+
+.option-icons li:hover  {
   color: var(--white);
   transition: color 100ms linear;
   
+}
+.option-icons img  {
+  height: 100%;
+  width: 40%;
+  border-radius: var(--radius) 50px var(--radius) var(--radius);
+  object-fit: cover;
+  object-position: 100% 0
+  
+}
+.option-icons h1  {
+  width: 100%;
+  text-align: center;
+  padding: 8px;
 }
 
 .title_wrapper {
@@ -107,11 +125,12 @@ body {
 }
 
 .info {
-  position: relative;
   width: 326px;
-  height: 160px;
+  position: relative;
+  /* width: 326px;
+  height: 160px; */
   margin-top: 10px;
-  padding: 35px;
+  padding: 20px;
   background-color: var(--dark-blue);
   border-radius: var(--radius);
   display: flex;
@@ -201,7 +220,7 @@ body {
   .info {
     width: 540px;
     align-items: flex-start;
-    bottom: -15px;
+    /* bottom: -15px; */
   }
   .bar-progress {
     width: 340px;
