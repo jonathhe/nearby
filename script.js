@@ -6,6 +6,7 @@ const options = {
 
 let map;
 let loc;
+let time;
 let places = [];
 
 const success = async (pos) => {
@@ -16,6 +17,8 @@ const success = async (pos) => {
   console.log(`Longitude: ${crd.longitude}`);
   console.log(`More or less ${crd.accuracy} meters.`);
 
+  time = new Date().getHours();
+
   loc = {
     lat: crd.latitude,
     lng: crd.longitude,
@@ -24,57 +27,93 @@ const success = async (pos) => {
   nearbySearch();
 };
 
+function generateRequest(text, SearchNearbyRankPreference, center) {
+  return {
+    textQuery: text,
+    // required parameters
+    fields: ["displayName", "googleMapsURI", "photos"],
+    locationBias: {
+      center: center,
+      radius: 2000,
+    },
+    // optional parameters
+    maxResultCount: 3,
+    minRating: 4,
+    rankPreference: SearchNearbyRankPreference.DISTANCE,
+  };
+}
+
 function error(err) {
   console.warn(`ERROR(${err.code}): ${err.message}`);
 }
 
 async function initMap() {
-    navigator.geolocation.getCurrentPosition(success, error, options)
+  navigator.geolocation.getCurrentPosition(success, error, options);
 }
 
 async function nearbySearch() {
-    //@ts-ignore
-    console.log("Nearby Search");
-    console.log(loc);
-    const { Place, SearchNearbyRankPreference } = await google.maps.importLibrary('places');
-    // Restrict within the map viewport.
-    let center = new google.maps.LatLng(loc.lat, loc.lng);
-    const request = {
-        textQuery: 'food',
-        // required parameters
-        fields: ['displayName', 'googleMapsURI', 'photos'],
-        
-        locationBias: {
-            center: center,
-            radius: 5000,
-        },
-        // optional parameters
-        maxResultCount: 3,
-        minRating: 4,
-        rankPreference: SearchNearbyRankPreference.RELEVANCE
-    };
-    //@ts-ignore
-    const { places } = await Place.searchByText(request);
-    if (places.length) {
-        console.log(places);
-        let placesWrapper = document.getElementById("places");
-        // Loop through and get all the results.
-        places.forEach((place) => {
-            placesWrapper.innerHTML += placeHtml(place);
-        });
-    }
-    else {
-        console.log("No results");
-    }
+  //@ts-ignore
+  console.log("Nearby Search");
+  console.log(loc);
+  let center = new google.maps.LatLng(loc.lat, loc.lng);
+
+  const { Place, SearchNearbyRankPreference } = await google.maps.importLibrary(
+    "places"
+  );
+  const breakfastRequest = generateRequest(
+    "breakfast",
+    SearchNearbyRankPreference,
+    center
+  );
+  const lunchRequest = generateRequest(
+    "lunch",
+    SearchNearbyRankPreference,
+    center
+  );
+  const restaurantRequest = generateRequest(
+    "restaurant",
+    SearchNearbyRankPreference,
+    center
+  );
+  const drinksRequest = generateRequest(
+    "drinks",
+    SearchNearbyRankPreference,
+    center
+  );
+
+  let requestToPerform;
+
+  console.log("Time: " + time);
+  console.log("Is right:", 15 < time && time < 21);
+
+  if (time <= 11) {
+    requestToPerform = breakfastRequest;
+  } else if (time > 11 && time <= 15) {
+    requestToPerform = lunchRequest;
+  } else if (time > 15 && time <= 21) {
+    requestToPerform = restaurantRequest;
+  } else {
+    requestToPerform = drinksRequest;
+  }
+
+  const { places } = await Place.searchByText(requestToPerform);
+  if (places.length) {
+    console.log(places);
+    let placesWrapper = document.getElementById("places");
+    places.forEach((place) => {
+      placesWrapper.innerHTML += placeHtml(place);
+    });
+  } else {
+    console.log("No results");
+  }
 }
 
 const placeHtml = (place) => {
-
   return `
     <li onclick="location.href = '${place.googleMapsURI}';" class="place">
-      <img class="place-image" src=${place.photos[0].getURI({maxHeight: 100})}></img>
+      <img class="place-image" src=${place.photos[0].getURI({
+        width: 120,
+      })}></img>
       <h1>${place.displayName}</h1>
     </li>`;
 };
-
-

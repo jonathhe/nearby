@@ -25,7 +25,7 @@
   --dark-blue: hsl(228, 56%, 26%);
   --very-dark-blue: hsl(229, 57%, 11%);
   --white: #fff;
-  --radius: 5px;
+  --radius: 10px;
 }
 
 html,
@@ -35,7 +35,7 @@ body {
   background-color: var(--dark-Blue);
   color: var(--white);
   background-color: var(--very-dark-blue);
-  background-image: url('https://i.pinimg.com/564x/03/a2/f4/03a2f47890386ea347facb9892a7a1d5.jpg');
+  
 }
 
 .main {
@@ -98,9 +98,9 @@ body {
 .option-icons img  {
   height: 100px;
   width: 100px;
+  min-width: 110px;
   border-radius: var(--radius) 50px var(--radius) var(--radius);
   object-fit: cover;
-  object-position: 100% 0
   
 }
 .option-icons h1  {
@@ -211,13 +211,7 @@ body {
 
 
 @media(min-width: 1024px) {
-  body {
-    background-image: url('https://i.pinimg.com/originals/db/a2/66/dba266ecc00b02679c2491363aca8b26.png');
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: bottom;
-    
-  }
+  
   .main {
     flex-direction: row;
   }
