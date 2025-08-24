@@ -36,6 +36,7 @@ function generateRequest(text, SearchNearbyRankPreference, center) {
       center: center,
       radius: 2000,
     },
+    isOpenNow: true,
     // optional parameters
     maxResultCount: 3,
     minRating: 4,
@@ -86,7 +87,7 @@ async function nearbySearch() {
   console.log("Time: " + time);
   console.log("Is right:", 15 < time && time < 21);
 
-  if (time <= 11) {
+  if (time > 5 && time <= 11) {
     requestToPerform = breakfastRequest;
   } else if (time > 11 && time <= 15) {
     requestToPerform = lunchRequest;
