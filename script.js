@@ -9,6 +9,13 @@ let loc;
 let time;
 let places = [];
 
+let testPos = {
+  coords: {
+    latitude: 61.117529,
+    lnlongitudeg: 10.46449,
+  },
+};
+
 const success = async (pos) => {
   const crd = pos.coords;
 
@@ -49,7 +56,7 @@ function error(err) {
 }
 
 async function initMap() {
-  navigator.geolocation.getCurrentPosition(success, error, options);
+  success(testPos);
 }
 
 async function nearbySearch() {
@@ -112,9 +119,11 @@ async function nearbySearch() {
 const placeHtml = (place) => {
   return `
     <li onclick="location.href = '${place.googleMapsURI}';" class="place">
-      <img class="place-image" width="120" height="120" src=${place.photos[0].getURI({
-        width: 120
-      }) ?? "public/icon.svg"}></img>
+      <img class="place-image" width="100" height="100" src=${
+        place.photos[0].getURI({
+          width: 100,
+        }) ?? "public/icon.svg"
+      }></img>
       <h1>${place.displayName}</h1>
     </li>`;
 };
