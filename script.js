@@ -112,9 +112,11 @@ async function nearbySearch() {
 const placeHtml = (place) => {
   return `
     <li onclick="location.href = '${place.googleMapsURI}';" class="place">
-      <img class="place-image" width="120" height="120" src=${place.photos[0].getURI({
-        width: 120
-      }) ?? "public/icon.svg"}></img>
+      <img class="place-image" width="100" height="100" src=${
+        place.photos[0].getURI({
+          width: 100,
+        }) ?? "public/icon.svg"
+      }></img>
       <h1>${place.displayName}</h1>
     </li>`;
 };
