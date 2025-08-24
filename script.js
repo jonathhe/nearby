@@ -9,13 +9,6 @@ let loc;
 let time;
 let places = [];
 
-let testPos = {
-  coords: {
-    latitude: 61.117529,
-    lnlongitudeg: 10.46449,
-  },
-};
-
 const success = async (pos) => {
   const crd = pos.coords;
 
@@ -56,7 +49,7 @@ function error(err) {
 }
 
 async function initMap() {
-  success(testPos);
+  navigator.geolocation.getCurrentPosition(success, error, options);
 }
 
 async function nearbySearch() {
