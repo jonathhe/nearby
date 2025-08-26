@@ -10,6 +10,9 @@ let time;
 let places = [];
 
 const success = async (pos) => {
+
+  console.log("Referer: ",document.referrer)
+
   const crd = pos.coords;
 
   console.log("Your current position is:");
