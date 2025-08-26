@@ -206,6 +206,10 @@ body {
   font-weight: 700;
 }
 
+.stripe{
+  width: 90%;
+}
+
 .attribution { font-size: 11px; text-align: center; padding: 10px 0; }
 .attribution a { color: var(--white); font-weight: 700; }
 
