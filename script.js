@@ -9,6 +9,8 @@ let loc;
 let time;
 let places = [];
 
+console.log("Referer outside: ",document.referrer)
+
 const success = async (pos) => {
 
   console.log("Referer: ",document.referrer)
