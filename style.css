@@ -49,8 +49,8 @@ body {
 }
 
 .fylo-options {
-  width: 285px;
-  height: 180px;
+  width: 300px;
+  height: 200px;
   background-color: var(--dark-blue);
   border-radius: var(--radius) 100px var(--radius) var(--radius);
   display: flex;
@@ -136,7 +136,7 @@ body {
 }
 
 .info {
-  width: 285px;
+  width: 300px;
   position: relative;
   /* width: 326px;
   height: 160px; */
@@ -223,7 +223,6 @@ body {
   }
   .fylo-options { 
     margin-right: 30px;
-    padding: 0 35px 0 0;
   }
   .info {
     width: 540px;
