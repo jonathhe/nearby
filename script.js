@@ -10,7 +10,6 @@ let time;
 let places = [];
 
 const success = async (pos) => {
-
   const crd = pos.coords;
 
   console.log("Your current position is:");
@@ -50,22 +49,24 @@ function error(err) {
 }
 
 async function initMap() {
-  
+  let placesWrapper = document.getElementById("places");
+
   let hasAccess = getCookie("hasAccess");
 
-  console.log("hasAccess: ", hasAccess)
+  console.log("hasAccess: ", hasAccess);
 
-  if(hasAccess == "true") {
+  if (hasAccess == "true") {
     console.log("Has access");
     navigator.geolocation.getCurrentPosition(success, error, options);
-  }else if(document.referrer.includes("https://buy.stripe.com/"))
-  {
+  } else if (document.referrer.includes("https://buy.stripe.com/")) {
     console.log("Gained access");
     document.cookie = "hasAccess=true; max-age=2592000000"; // 30 days
-    navigator.geolocation.getCurrentPosition(success, error, options); 
-  }else{
+    navigator.geolocation.getCurrentPosition(success, error, options);
+  } else {
     console.log("No access");
-    window.location.href = "https://nearbyou.app/";
+    placesWrapper.innerHTML = `<stripe-buy-button buy-button-id="buy_btn_1S0Lv7RzYoZwm6VkSLYTn62X"
+        publishable-key="pk_test_51S0LcuRzYoZwm6VksKbQmsx5Up1vpnjoaVDiM5Yfgb3oCghJ8HUftbVwt1MbvLQwxdiwXCPqKwXCTc7B67rzL6az00zJlzvPhN">
+      </stripe-buy-button>`;
   }
 }
 
@@ -140,13 +141,13 @@ const placeHtml = (place) => {
 
 function getCookie(name) {
   // Add the = sign
-  name = name + '=';
+  name = name + "=";
 
   // Get the decoded cookie
   var decodedCookie = decodeURIComponent(document.cookie);
 
   // Get all cookies, split on ; sign
-  var cookies = decodedCookie.split(';');
+  var cookies = decodedCookie.split(";");
 
   // Loop over the cookies
   for (var i = 0; i < cookies.length; i++) {
