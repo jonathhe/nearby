@@ -64,9 +64,10 @@ async function initMap() {
     navigator.geolocation.getCurrentPosition(success, error, options);
   } else {
     console.log("No access");
-    placesWrapper.innerHTML = `<stripe-buy-button buy-button-id="buy_btn_1S0Lv7RzYoZwm6VkSLYTn62X"
+    placesWrapper.innerHTML = `
+    <stripe-buy-button buy-button-id="buy_btn_1S0Lv7RzYoZwm6VkSLYTn62X"
         publishable-key="pk_test_51S0LcuRzYoZwm6VksKbQmsx5Up1vpnjoaVDiM5Yfgb3oCghJ8HUftbVwt1MbvLQwxdiwXCPqKwXCTc7B67rzL6az00zJlzvPhN">
-      </stripe-buy-button>`;
+    </stripe-buy-button>`;
   }
 }
 

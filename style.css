@@ -50,15 +50,12 @@ body {
 
 .fylo-options {
   width: 285px;
-  height: 175px;
+  height: 180px;
   background-color: var(--dark-blue);
   border-radius: var(--radius) 100px var(--radius) var(--radius);
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-}
-.fylo-options > div {
-  margin-bottom: 10px;
 }
 
 .button_wrapper{
@@ -129,8 +126,13 @@ body {
 
 
 .title {
-    font-size: 32px;
+    font-size: 60px;
     font-weight: 700;
+}
+
+
+.subtitle {
+    font-size: 14px;
 }
 
 .info {
@@ -220,7 +222,6 @@ body {
     flex-direction: row;
   }
   .fylo-options { 
-    width: 350px;
     margin-right: 30px;
     padding: 0 35px 0 0;
   }
@@ -247,11 +248,6 @@ body {
     border-color: transparent var(--white) transparent transparent;
   }
 
-  .title_wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
 }
 
 .title_wrapper > span {
