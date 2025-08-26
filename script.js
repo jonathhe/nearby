@@ -9,11 +9,7 @@ let loc;
 let time;
 let places = [];
 
-console.log("Referer outside: ", document.referrer)
-
 const success = async (pos) => {
-
-  console.log("Referer: ",document.referrer)
 
   const crd = pos.coords;
 
@@ -54,7 +50,23 @@ function error(err) {
 }
 
 async function initMap() {
-  navigator.geolocation.getCurrentPosition(success, error, options);
+  
+  let hasAccess = getCookie("hasAccess");
+
+  console.log("hasAccess: ", hasAccess)
+
+  if(hasAccess == "true") {
+    console.log("Has access");
+    navigator.geolocation.getCurrentPosition(success, error, options);
+  }else if(document.referrer.includes("https://buy.stripe.com/"))
+  {
+    console.log("Gained access");
+    document.cookie = "hasAccess=true; max-age=2592000000"; // 30 days
+    navigator.geolocation.getCurrentPosition(success, error, options); 
+  }else{
+    console.log("No access");
+    window.location.href = "https://nearbyou.app/";
+  }
 }
 
 async function nearbySearch() {
@@ -125,3 +137,26 @@ const placeHtml = (place) => {
       <h1>${place.displayName}</h1>
     </li>`;
 };
+
+function getCookie(name) {
+  // Add the = sign
+  name = name + '=';
+
+  // Get the decoded cookie
+  var decodedCookie = decodeURIComponent(document.cookie);
+
+  // Get all cookies, split on ; sign
+  var cookies = decodedCookie.split(';');
+
+  // Loop over the cookies
+  for (var i = 0; i < cookies.length; i++) {
+    // Define the single cookie, and remove whitespace
+    var cookie = cookies[i].trim();
+
+    // If this cookie has the name of what we are searching
+    if (cookie.indexOf(name) == 0) {
+      // Return everything after the cookies name
+      return cookie.substring(name.length, cookie.length);
+    }
+  }
+}
