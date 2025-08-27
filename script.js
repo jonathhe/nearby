@@ -65,11 +65,11 @@ async function initMap() {
   } else {
     console.log("No access");
     placesWrapper.innerHTML = `
-    <stripe-buy-button
-      buy-button-id="buy_btn_1S0cdt2KoBygoKmSyhsqBdwW" 
+   <stripe-buy-button
+      buy-button-id="buy_btn_1S0cvN2KoBygoKmSO6D9Ufxx"
       publishable-key="pk_live_51S0Lci2KoBygoKmSqdjWkbBBxnvdAmi0e8WHf8x21mnTsLYznj3zVuDouNSXzEaXuesKCRxFC19LlbHozM6CHZNU00vR6Wp59d"
-      >
-    </stripe-buy-button>`;
+  >
+  </stripe-buy-button>`;
   }
 }
 
