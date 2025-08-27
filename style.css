@@ -25,7 +25,7 @@
   --dark-blue: hsl(228, 56%, 26%);
   --very-dark-blue: hsl(229, 57%, 11%);
   --white: #fff;
-  --radius: 10px;
+  --radius: 3px;
 }
 
 html,
@@ -74,24 +74,20 @@ body {
 
 .option-icons li {
   list-style-type: none; /* Remove bullets */
-  width: 95%;
+  width: 100%;
   height: 80px;
-  margin-top: 10px;
-  margin-bottom: 10px;  
+  margin-bottom: 20px;  
   display: flex;
   justify-content: space;
   align-items: center;  
   border-radius: var(--radius);
-  background-color: var(--very-dark-blue);
+  background-color: var(--white);
   cursor: pointer;
   font-weight: 700;
+  box-shadow: 5px 7px 1px 0px rgb(33 58 167);
+  color: var(--very-dark-blue);
 }
 
-.option-icons li:hover  {
-  color: var(--white);
-  transition: color 100ms linear;
-
-}
 .option-icons img  {
   height: 80px;
   width: 80px;
@@ -121,7 +117,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* align-items: center; */
+    padding-top: 15px;
 }
 
 
@@ -224,6 +220,7 @@ a {
   style: none;
   text-decoration: none;
   font-weight: 500;
+  font-size: 12px;
 }
 
 a:hover{

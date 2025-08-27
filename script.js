@@ -8,6 +8,12 @@ let map;
 let loc;
 let time;
 let places = [];
+let testPos = {
+  coords: {
+    latitude: 51.525530,
+    longitude: -0.077636
+  },
+};
 
 const success = async (pos) => {
   const crd = pos.coords;
@@ -64,12 +70,7 @@ async function initMap() {
     navigator.geolocation.getCurrentPosition(success, error, options);
   } else {
     console.log("No access");
-    placesWrapper.innerHTML = `
-   <stripe-buy-button
-      buy-button-id="buy_btn_1S0cvN2KoBygoKmSO6D9Ufxx"
-      publishable-key="pk_live_51S0Lci2KoBygoKmSqdjWkbBBxnvdAmi0e8WHf8x21mnTsLYznj3zVuDouNSXzEaXuesKCRxFC19LlbHozM6CHZNU00vR6Wp59d"
-  >
-  </stripe-buy-button>`;
+    success(testPos);
   }
 }
 
