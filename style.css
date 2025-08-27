@@ -215,6 +215,11 @@ body {
 .attribution { font-size: 11px; text-align: center; padding: 10px 0; }
 .attribution a { color: var(--white); font-weight: 700; }
 
+  .unsubscribe {
+    padding-top: 10px;
+    color: var(--white);
+    style: none;
+  }
 
 @media(min-width: 1024px) {
   
@@ -226,12 +231,11 @@ body {
   }
   .info {
     width: 540px;
-    align-items: flex-start;
-    /* bottom: -15px; */
   }
   .bar-progress {
     width: 340px;
   }
+
   .spotlight {
     top: -43px;
     right: 40px;
