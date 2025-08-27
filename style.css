@@ -84,7 +84,7 @@ body {
   background-color: var(--white);
   cursor: pointer;
   font-weight: 700;
-  box-shadow: 5px 5px 1px 0px rgb(33 58 167);
+  box-shadow: 6px 6px 0px 0px hsl(228deg 53.24% 40.8%);
   color: var(--very-dark-blue);
 }
 
