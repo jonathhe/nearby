@@ -215,11 +215,20 @@ body {
 .attribution { font-size: 11px; text-align: center; padding: 10px 0; }
 .attribution a { color: var(--white); font-weight: 700; }
 
-  .unsubscribe {
-    padding-top: 10px;
-    color: var(--white);
-    style: none;
+.unsubscribe {
+    padding-top: 8px;
   }
+
+a {
+  color: var(--white);
+  style: none;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover{
+  text-decoration: underline;
+}
 
 @media(min-width: 1024px) {
   
