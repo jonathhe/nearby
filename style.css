@@ -50,7 +50,7 @@ body {
 
 .fylo-options {
   width: 300px;
-  height: 230px;
+  height: 250px;
   background-color: var(--dark-blue);
   border-radius: var(--radius) 100px var(--radius) var(--radius);
   display: flex;
