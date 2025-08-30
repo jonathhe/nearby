@@ -76,7 +76,7 @@ body {
 .option-icons li {
   list-style-type: none; /* Remove bullets */
   width: 100%;
-  height: 60px;
+  height: 65px;
   margin-bottom: 20px;  
   display: flex;
   justify-content: space;
@@ -90,7 +90,7 @@ body {
 }
 
 .option-icons img  {
-  height: 60px;
+  height: 65px;
   min-width: 90px;
   border-radius: var(--radius) 40px var(--radius) var(--radius);
   object-fit: cover;
@@ -101,7 +101,7 @@ body {
   text-align: center;
   padding: 8px;
   overflow: hidden;
-  font-size: 12px
+  font-size: 13px
 }
 
 
