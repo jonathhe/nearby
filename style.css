@@ -22,8 +22,8 @@
   --color-icon: #6C7ED2;
   --pale-blue: hsl(243, 100%, 93%);
   --grayish-blue: hsl(229, 7%, 55%);
-  --dark-blue: hsl(228, 56%, 26%);
-  --very-dark-blue: hsl(229, 57%, 11%);
+  --dark-blue: hsl(220, 56%, 26%);
+  --very-dark-blue: hsl(220, 57%, 11%);
   --white: #fff;
   --radius: 3px;
 }
@@ -84,7 +84,6 @@ body {
   background-color: var(--white);
   cursor: pointer;
   font-weight: 700;
-  box-shadow: 6px 6px 0px 0px hsl(228deg 53.24% 40.8%);
   color: var(--very-dark-blue);
   outline: solid 2px var(--very-dark-blue);
 }
