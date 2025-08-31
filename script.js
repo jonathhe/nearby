@@ -116,9 +116,9 @@ async function nearbySearch() {
 
   if (time > 5 && time <= 11) {
     requestToPerform = breakfastRequest;
-  } else if (time > 11 && time <= 15) {
+  } else if (time > 11 && time <= 17) {
     requestToPerform = lunchRequest;
-  } else if (time > 15 && time <= 21) {
+  } else if (time > 17 && time <= 21) {
     requestToPerform = restaurantRequest;
   } else {
     requestToPerform = drinksRequest;
