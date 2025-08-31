@@ -22,8 +22,8 @@
   --color-icon: #6C7ED2;
   --pale-blue: hsl(243, 100%, 93%);
   --grayish-blue: hsl(229, 7%, 55%);
-  --dark-blue: hsl(225, 70%, 26%);
-  --very-dark-blue: hsl(225, 70%, 11%);
+  --dark-blue: hsl(225, 80%, 26%);
+  --very-dark-blue: hsl(225, 80%, 11%);
   --white: #fff;
   --radius: 3px;
 }
