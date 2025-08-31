@@ -85,7 +85,7 @@ body {
   cursor: pointer;
   font-weight: 700;
   color: var(--very-dark-blue);
-  outline: solid 2px var(--very-dark-blue);
+  outline: solid 1px var(--very-dark-blue);
 }
 
 .option-icons img  {
