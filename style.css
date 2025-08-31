@@ -86,7 +86,7 @@ body {
   cursor: pointer;
   font-weight: 700;
   color: var(--very-dark-blue);
-  outline: solid 1px var(--very-dark-blue);
+  outline: solid 1px rgba(0,0,0,0.2);
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
