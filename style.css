@@ -223,7 +223,7 @@ body {
 .attribution a { color: var(--white); font-weight: 700; }
 
 .unsubscribe {
-    padding-top: 4px;
+    padding-top: 10px;
   }
 
 a {
