@@ -37,7 +37,7 @@ function generateRequest(text, SearchNearbyRankPreference, center) {
   return {
     textQuery: text,
     // required parameters
-    fields: ["displayName", "googleMapsURI", "photos"],
+    fields: ["displayName", "googleMapsURI", "photos", "rating", "userRatingCount"],
     locationBias: {
       center: center,
       radius: 2000,
@@ -146,6 +146,7 @@ const placeHtml = (place) => {
       }></img>
       <div class="info-text">
         <h1>${place.displayName}</h1>
+        <p class="rating">${place.rating} (${place.userRatingCount})★</p>
       </div>
     </li>`;
 };
