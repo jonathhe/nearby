@@ -146,7 +146,7 @@ const placeHtml = (place) => {
       }></img>
       <div class="info-text">
         <h1>${place.displayName}</h1>
-        <p class="rating">${place.rating} (${place.userRatingCount})★</p>
+        <p class="rating">${place.rating}★ (${place.userRatingCount})</p>
       </div>
     </li>`;
 };
