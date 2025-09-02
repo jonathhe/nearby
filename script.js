@@ -144,7 +144,9 @@ const placeHtml = (place) => {
           width: 100,
         }) ?? "public/icon.svg"
       }></img>
-      <h1>${place.displayName}</h1>
+      <div class="info-text">
+        <h1>${place.displayName}</h1>
+      </div>
     </li>`;
 };
 

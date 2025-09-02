@@ -78,20 +78,28 @@ body {
   height: 70px;
   margin-bottom: 20px;  
   display: flex;
-  justify-content: space;
   align-items: center;  
   border-radius: var(--radius);
-  background-color: var(--white);
   cursor: pointer;
   font-weight: 700;
   color: var(--very-dark-blue);
-  outline: solid 1px rgba(0,0,0,0.2);
+}
+
+.info-text {
+  width: 100%;
+  height: 100%;
+  border-radius:  0px var(--radius) var(--radius) 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--white);
+  margin-left: 2px;
 }
 
 .option-icons img  {
   height: 70px;
   min-width: 90px;
-  border-radius: var(--radius) 40px var(--radius) var(--radius);
+  border-radius: var(--radius) 0px 0px var(--radius);
   object-fit: cover;
   
 }
