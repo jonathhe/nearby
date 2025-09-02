@@ -22,7 +22,7 @@
   --color-icon: #6C7ED2;
   --pale-blue: hsl(243, 100%, 93%);
   --grayish-blue: hsl(229, 7%, 55%);
-  --dark-blue: hsl(228, 56%, 26%);
+  --dark-blue: rgb(29 56 103);
   --very-dark-blue: hsl(229, 56%, 11%);
   --white: #fff;
   --radius: 3px;
@@ -76,7 +76,7 @@ body {
   list-style-type: none; /* Remove bullets */
   width: 100%;
   height: 70px;
-  margin-bottom: 20px;  
+  margin-bottom: 10px;  
   display: flex;
   align-items: center;  
   border-radius: var(--radius);
@@ -94,6 +94,12 @@ body {
   justify-content: center;
   background-color: var(--white);
   margin-left: 2px;
+  align-items: center;
+}
+
+.rating {
+  font-weight: 400;
+  font-size: 10px;|
 }
 
 .option-icons img  {
@@ -143,11 +149,7 @@ body {
 .info {
   width: 300px;
   position: relative;
-  /* width: 326px;
-  height: 160px; */
-  margin-top: 10px;
-  padding: 20px;
-  background-color: var(--dark-blue);
+  padding: 10px 0px;
   border-radius: var(--radius);
   display: flex;
   flex-direction: column;
