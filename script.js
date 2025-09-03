@@ -94,7 +94,7 @@ async function nearbySearch() {
     center
   );
   const lunchRequest = generateRequest(
-    "lunch and coffee",
+    "lunch",
     SearchNearbyRankPreference,
     center
   );
