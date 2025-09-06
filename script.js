@@ -46,7 +46,7 @@ function generateRequest(text, SearchNearbyRankPreference, center) {
     // optional parameters
     maxResultCount: 3,
     minRating: 4,
-    rankPreference: SearchNearbyRankPreference.POPULARITY,
+    rankPreference: SearchNearbyRankPreference.RELEVANCE,
   };
 }
 
